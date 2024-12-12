@@ -3,7 +3,7 @@ import { formatDate } from "../../lib/formatDate";
 import { useState } from "react";
 import styles from "./Expenses.module.scss";
 import { fetchTransactions } from "../../lib/FetchTransactions";
-import { Transactions } from "../../models";
+import type { Transactions } from "../../models";
 
 export const Expenses = () => {
   const [page, setPage] = useState(1);
@@ -40,7 +40,7 @@ export const Expenses = () => {
           </tr>
         </thead>
         <tbody>
-          {data.transactions.map((transaction: Transactions) => (
+          {data?.transactions.map((transaction: Transactions) => (
             <tr key={transaction.id} className={styles.content}>
               <td>{transaction.id}</td>
               <td>{formatDate(transaction.date)}</td>
