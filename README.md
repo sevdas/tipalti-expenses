@@ -1,21 +1,30 @@
-## Tipalti React Starter Template
+# Expenses Tracker - Assessment Project
 
-This is a simplified React starter template configured using [Vite](https://vitejs.dev/guide/), a build tool that aims to provide a faster and leaner development experience.
+This project is an assessment for demonstrating skills in building a responsive web application using React, TypeScript, and State Management. The application fetches and displays a paginated list of transactions from a backend API.
 
-It has minimal dependencies and configuration to allow for easy installation and to allow the candidate to make their own decisions about styling, external libraries and other tooling.
+## Features
 
-You are free to make changes to the template but please be aware that those reviewing your work will need to be able to install and run it locally without difficulty.
+- **Paginated Transactions Table**: Displays a list of transactions with pagination.
+- **Backend API Integration**: Fetches transactions data dynamically based on the page number.
+- **State Management**: Utilizes React Query for efficient data fetching and caching.
+- **Modern UI/UX**: Clean and responsive design.
 
----
+## Tech Stack
 
-## Usage
+- **React**
+- **TypeScript**
+- **React Query**
+- **CSS Modules**
 
-To use the repository for your challenge submission, please clone the repository and create a new repository on your own Github account . Please DO NOT try to push branches, make pull requests  or fork the original source template repository.
+## Installation
 
-### Installation
+1. Clone the repository:
 
-From the root folder, run `npm install` to install all required dependencies.
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+   ```
 
-### Running Locally
+2. From the root folder, run `npm install` to install all required dependencies.
 
-From the root folder, run `npm run dev` to run a local server with hot reloading.
+3. From the root folder, run `npm run dev` to run a local server with hot reloading.
