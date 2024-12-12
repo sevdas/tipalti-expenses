@@ -1,0 +1,55 @@
+$borderColor: rgba(34, 36, 38, 0.1);
+$color: rgba(0, 0, 0, 0.87);
+$backgroundColor: #eaeced;
+
+.heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+.table {
+  width: 90%;
+  background: white;
+  margin: 0 auto;
+  border: 1px solid $borderColor;
+  border-radius: 0.25rem;
+  text-align: left;
+  color: $color;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.title {
+  & th {
+    cursor: auto;
+    background: $backgroundColor;
+    color: $color;
+    padding: 0.5rem;
+    border-bottom: 1px solid $borderColor;
+  }
+
+  & th:not(:last-child) {
+    border-right: 1px solid $borderColor;
+  }
+}
+
+.content {
+  & td {
+    border-bottom: 1px solid $borderColor;
+    padding: 0.25rem;
+  }
+
+  & td:not(:last-child) {
+    border-right: 1px solid $borderColor;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}

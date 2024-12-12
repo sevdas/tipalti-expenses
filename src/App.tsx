@@ -1,9 +1,12 @@
+import { Link, Route, Routes } from "react-router-dom";
+import { Expenses } from "./components/pages/Expenses";
+
 function App() {
   return (
-    <div id="template-text">
-      <h1>React Starter Template</h1>
-      <p>A lightweight React starter template in TypeScript and Vite</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<Link to={"/expenses"}>See expenses</Link>} />
+      <Route path="/expenses" element={<Expenses />} />
+    </Routes>
   );
 }
 
