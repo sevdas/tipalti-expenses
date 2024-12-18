@@ -2,7 +2,7 @@ import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import { formatDate } from "../../lib/formatDate";
 import { useState } from "react";
 import styles from "./Expenses.module.scss";
-import { fetchTransactions } from "../../lib/FetchTransactions";
+import { fetchTransactions } from "../../lib/fetchTransactions";
 import type { Transactions } from "../../models";
 
 export const Expenses = () => {
@@ -25,9 +25,26 @@ export const Expenses = () => {
     return <p>{error.message}</p>;
   }
 
+  const categorySums: Record<string, number> = {};
+
+  data?.transactions.forEach((transaction: Transactions) => {
+    const { category, amount } = transaction;
+
+    categorySums[category] = (categorySums[category] ?? 0) + amount;
+  });
+
   return (
     <div>
       <h1 className={styles.heading}>Expenses</h1>
+
+      <div className={styles.categorySumUp}>
+        {Object.keys(categorySums).map((category) => (
+          <div className={styles.categorySumUpItem}>
+            <h2>{category}</h2>
+            <p>{categorySums[category].toFixed(2)}</p>
+          </div>
+        ))}
+      </div>
 
       <table className={styles.table}>
         <thead>
